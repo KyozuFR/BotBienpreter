@@ -7,7 +7,7 @@ print("""
 BotBienpreter  Copyright (C) 2023  Linares Julien
 This program comes with ABSOLUTELY NO WARRANTY; for details look at readme.txt and LICENSE files.
 This is free software, and you are welcome to redistribute it
-under certain conditions; for details look at readme.txt and LICENSE files..""")
+under certain conditions; for details look at readme.txt and LICENSE files.""")
 
 
 
