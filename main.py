@@ -16,7 +16,7 @@ with open("mdp.txt", "r") as mdp:
 
 
 def timer_define(lien, mont):
-    #Cette fonction sert à enregistrer le temps restant avant la fin du décompte
+    #Cette fonction attend que le timer défini par la page (et donc le projet) se termine. Elle a pour résultat grace à ses 2 entrée que sont le lien et le montant d'investir dans le projet souhaité.
     navigateur.get(lien)
     testvar = 0
     while testvar == 0:
