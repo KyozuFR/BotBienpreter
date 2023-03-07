@@ -3,9 +3,9 @@ Solves the problem of "Bienpreter.com" project openings at a defined time. With 
             
                
 ## requirement               
-install python           
+install [python](https://www.python.org/downloads/)           
 install selenium (pip install selenium)                           
-install firefox and the latest geckodriver (**!!!geckodriver should be put at the root of the program**)                               
+install [firefox](https://www.mozilla.org/fr/firefox/new/) and the latest [geckodriver.exe](https://github.com/mozilla/geckodriver/releases) (**!!!geckodriver should be put at the root of the program**)                               
                
                    
 ## functioning             
