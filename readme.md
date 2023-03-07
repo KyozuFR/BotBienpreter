@@ -1,5 +1,5 @@
 # BotBienpreter               
-Solves the problem of "Bienpreter.com" project openings at a defined time. With this you can put your investment orders a few hours in advance.          
+Solves the problem of "Bienpreter.com" project openings at a defined time. With this you can put your investment orders a few hours in advance. (currently only available in French)          
             
                
 ## requirement               
