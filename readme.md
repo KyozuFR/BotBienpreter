@@ -1,12 +1,17 @@
 # BotBienpreter
+
 Solves the problem of "Bienpreter.com" project openings at a defined time. With this you can put your investment orders a few hours in advance.
 
+
 ## requirement
+
 install python
 install selenium (pip install selenium)
 install firefox and the latest geckodriver (**!!!geckodriver should be put at the root of the program**)
 
+
 ## functioning
+
 Create a file "mdp.txt" and put your ID at the top of the document with this syntax:
 
 
@@ -25,7 +30,9 @@ here you can put as many links as you want, the script will use them in order.
 **!!!Be careful, the website has a timeout (which I don't know) so launch the script a reasonable time in advance. I tried to launch it a day before and the bot got disconnected.**
 
 
+
 ### Copyright
+
 ***BotBienpreter Copyright (C) 2023  Linares Julien***
 
     This program is free software: you can redistribute it and/or modify
