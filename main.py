@@ -18,10 +18,11 @@ under certain conditions; for details look at readme.md and LICENSE files.""")
 with open("mdp.txt", "r") as mdp:
     email, mdp = mdp.readlines(0)[0].split("|")
 
-def connection():
+def connection(lienproj):
     for button in navigateur.find_elements(By.TAG_NAME, "a"):
          if button.get_property('href') == "https://www.bienpreter.com/connexion":
              button.click()
+             break
     navigateur.find_element(By.NAME, "user_login[email]").send_keys(email)
     navigateur.find_element(By.NAME, "user_login[password]").send_keys(mdp)
     testvar = 0
@@ -41,7 +42,7 @@ def connection():
     testvar = 0
     while testvar == 0:
         for menu in navigateur.find_elements(By.TAG_NAME, "a"):
-            if menu.get_property('href') == lien:
+            if menu.get_property('href') == lienproj:
                 menu.click()
                 testvar = 1
                 break
@@ -56,7 +57,7 @@ def timer_define(lien, mont):
     while testvar == 0:
         for texte in navigateur.find_elements(By.TAG_NAME, "em"):
             if texte.text == "VOUS DEVEZ ÊTRE CONNECTÉ(E) POUR PRÊTER DE L'ARGENT":
-                connection()
+                connection(lien)
                 testvar = 1
                 break
             else:
