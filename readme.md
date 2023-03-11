@@ -2,7 +2,7 @@
 Solves the problem of "Bienpreter.com" project openings at a defined time. With this you can put your investment orders a few hours in advance. (currently only available in French)          
             
                
-## requirement               
+## requirements               
 install [python](https://www.python.org/downloads/)           
 install selenium (pip install selenium)                           
 install [firefox](https://www.mozilla.org/fr/firefox/new/) and the latest [geckodriver.exe](https://github.com/mozilla/geckodriver/releases) (**!!!geckodriver should be put at the root of the program**)                               
@@ -24,7 +24,11 @@ link|amount
                           
 here you can put as many links as you want, the script will use them in order.                      
                              
-**!!!Be careful, the website has a timeout (which I don't know) so launch the script a reasonable time in advance. I tried to launch it a day before and the bot got disconnected.**                        
+**!!!Be careful, the website has a timeout (which I don't know) so launch the script a reasonable time in advance. I tried to launch it a day before and the bot got disconnected.**
+
+
+## Optional Package
+A notification system (read the "README.md" in module\NTFY to make it work)
                        
                    
                      

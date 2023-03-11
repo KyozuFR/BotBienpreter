@@ -1,6 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
+try:
+    from module.NTFY.ntfy import notify
+except:
+    print("the 'NTFY' module has not been activated")
 # navigateur = webdriver.Firefox(service=Service("geckodriver.exe"))
 
 print("""
@@ -74,7 +78,7 @@ def timer_define(lien, mont):
                 menu.click()
                 testvar = 1
                 break
-    print("Fin de la v0,5")
+    print("successfully completed purchase")
 
 navigateur = webdriver.Firefox(service=Service("geckodriver.exe"))
 navigateur.implicitly_wait(20)
@@ -83,3 +87,7 @@ with open("lien.txt", "r+") as file:
         lienause, nbmont = i.split("|")
         print("lien:", lienause, "montant:",nbmont)
         timer_define(lienause, int(nbmont))
+        try:
+            notify(lienause, nbmont)
+        except:
+            print("the 'NTFY' module has not been activated")
