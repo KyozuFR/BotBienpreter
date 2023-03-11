@@ -18,20 +18,10 @@ under certain conditions; for details look at readme.md and LICENSE files.""")
 with open("mdp.txt", "r") as mdp:
     email, mdp = mdp.readlines(0)[0].split("|")
 
-
-def timer_define(lien, mont):
-    #Cette fonction attend que le timer défini par la page (et donc le projet) se termine. Elle a pour résultat grace à ses 2 entrée que sont le lien et le montant d'investir dans le projet souhaité.
-    navigateur.get(lien)
-    testvar = 0
-    while testvar == 0:
-        for texte in navigateur.find_elements(By.TAG_NAME, "em"):
-            if texte.text == "VOUS DEVEZ ÊTRE CONNECTÉ(E) POUR PRÊTER DE L'ARGENT":
-                for button in navigateur.find_elements(By.TAG_NAME, "a"):
-                    if button.get_property('href') == "https://www.bienpreter.com/connexion":
-                        button.click()
-                        testvar = 1
-                        break
-                break
+def connection():
+    for button in navigateur.find_elements(By.TAG_NAME, "a"):
+         if button.get_property('href') == "https://www.bienpreter.com/connexion":
+             button.click()
     navigateur.find_element(By.NAME, "user_login[email]").send_keys(email)
     navigateur.find_element(By.NAME, "user_login[password]").send_keys(mdp)
     testvar = 0
@@ -55,6 +45,26 @@ def timer_define(lien, mont):
                 menu.click()
                 testvar = 1
                 break
+    print("connected")
+
+
+def timer_define(lien, mont):
+    #Cette fonction attend que le timer défini par la page (et donc le projet) se termine. Elle a pour résultat grace à ses 2 entrée que sont le lien et le montant d'investir dans le projet souhaité.
+    navigateur.get(lien)
+    testvar = 0
+    skip = 0
+    while testvar == 0:
+        for texte in navigateur.find_elements(By.TAG_NAME, "em"):
+            if texte.text == "VOUS DEVEZ ÊTRE CONNECTÉ(E) POUR PRÊTER DE L'ARGENT":
+                connection()
+                testvar = 1
+                break
+            else:
+                for texte in navigateur.find_elements(By.TAG_NAME, "a"):
+                    if texte.text == "Le projet":
+                        if texte.get_attribute('class').__contains__("disabled") is False:
+                            testvar = 1
+                            break
     testvar = 0
     while testvar == 0:
         for menu in navigateur.find_elements(By.TAG_NAME, "a"):
