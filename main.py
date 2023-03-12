@@ -19,6 +19,7 @@ with open("mdp.txt", "r") as mdp:
     email, mdp = mdp.readlines(0)[0].split("|")
 
 def connection(lienproj):
+    #Est appelé si l'utilisateur n'est pas connecté
     for button in navigateur.find_elements(By.TAG_NAME, "a"):
          if button.get_property('href') == "https://www.bienpreter.com/connexion":
              button.click()
@@ -49,11 +50,10 @@ def connection(lienproj):
     print("connected")
 
 
-def timer_define(lien, mont):
+def BUYFONC(lien, mont):
     #Cette fonction attend que le timer défini par la page (et donc le projet) se termine. Elle a pour résultat grace à ses 2 entrée que sont le lien et le montant d'investir dans le projet souhaité.
     navigateur.get(lien)
     testvar = 0
-    skip = 0
     while testvar == 0:
         for texte in navigateur.find_elements(By.TAG_NAME, "em"):
             if texte.text == "VOUS DEVEZ ÊTRE CONNECTÉ(E) POUR PRÊTER DE L'ARGENT":
@@ -97,7 +97,7 @@ with open("lien.txt", "r+") as file:
     for i in file.readlines():
         lienause, nbmont = i.split("|")
         print("lien:", lienause, "montant:",nbmont)
-        timer_define(lienause, int(nbmont))
+        BUYFONC(lienause, int(nbmont))
         try:
             notify(lienause, nbmont)
         except:
