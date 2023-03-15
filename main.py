@@ -70,7 +70,7 @@ def BUYFONC(lien, mont):
     testvar = 0
     while testvar == 0:
         for menu in navigateur.find_elements(By.TAG_NAME, "a"):
-            if menu.text == "PRÊTER" and "disabled" not in menu.get_attribute('class'):
+            if menu.text.__contains__("PRÊTER") is True and "disabled" not in menu.get_attribute('class') and menu.get_attribute('class').__contains__("btn"):
                 menu.click()
                 testvar = 1
                 break
