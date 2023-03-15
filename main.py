@@ -66,6 +66,7 @@ def BUYFONC(lien, mont):
                         if texte.get_attribute('class').__contains__("disabled") is False:
                             testvar = 1
                             break
+    print("Waiting")
     testvar = 0
     while testvar == 0:
         for menu in navigateur.find_elements(By.TAG_NAME, "a"):

@@ -16,7 +16,7 @@ e-mail|password
                       
                         
 **No spaces, no line breaks.**                    
-Then put the link of the project "bienpreter.com" and the amount with this syntax:                                       
+Then put the link of the project "bienpreter.com" and the amount in the file "lien.txt" with this syntax :                                       
                    
                  
 link|amount                   
